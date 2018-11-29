@@ -1,0 +1,17 @@
+#form1{
+    margin-left:100px;
+    maxWidth: 450px;  
+}
+.navv{
+
+    z-index: 9;
+}
+#inline_icon {
+    vertical-align: middle;
+    font-size: 18px !important;
+ }
+.spam{
+    background: #f00;
+    z-index: 10;
+    display: block;
+}

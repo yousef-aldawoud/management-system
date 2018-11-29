@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     this.start()
     return (
-      <div >
+      <div > 
         <NavBar/>
       </div>
     );
