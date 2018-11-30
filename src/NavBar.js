@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBarStyle from   './NavBar.css';
-import {Button,NavItem,Dropdown,Navbar} from 'react-materialize'
+import {NavItem,Dropdown} from 'react-materialize'
 import SideNavBar from './SideNavBar';
 class NavBar extends Component {
   
@@ -12,7 +12,7 @@ class NavBar extends Component {
       <nav >
       <div className="nav-wrapper blue lighten-2 row NavBar">
       
-      <SideNavBar trigger={<a data-activates="mobile-demo" className="button-collapse show-on-large l1"><i className="material-icons">menu</i></a>}/>
+      <SideNavBar addProject={this.props.addProject} trigger={<a data-activates="mobile-demo" className="button-collapse show-on-large l1"><i className="material-icons">menu</i></a>}/>
       
 
       <a href="#" className=" brand-logo left col s6 m1 l2">Logo</a>
