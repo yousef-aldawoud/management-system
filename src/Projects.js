@@ -4,6 +4,7 @@ import   './projects.css';
 import {Button,NavItem,Dropdown,Navbar,Collection,CollectionItem,Modal, Input,Row} from 'react-materialize'
 import SideNavBar from './SideNavBar';
 import AddProjectForm from './AddProjectForm';
+import Project from './Project';
 const Projects = ({projects}) =>{
    
     const getStatus = (due_date,project_status,otherClass)=>{
@@ -25,27 +26,14 @@ const Projects = ({projects}) =>{
     const getProjectsOnSmallScreen = (project,index)=>{
         var status = getStatus(project.due_date,project.status,"");
         var dueDate = new Date(project.dueDate);
-        return(
-            <tr>
-            <td>{project.name}</td>
-            <td>{project.manager}</td>
-            <td>{status}</td>
-            <td><a className="link" href="#">details</a></td>
-          </tr>
-        )
+        return(<Project small={true} name={project.name} due_date={project.due_date} manager={project.manager} status={project.status} small={false}/>
+            );
        
     }
     const getProjects= (project,index)=>{
         var status = getStatus(project.due_date,project.status);
         var dueDate = new Date(project.dueDate);
-        return(
-          <CollectionItem className="row row_stick white" key={index}>
-                <p className="col l2 m2 center row_stick"><p className="grey-text row_stick">Project title</p>{project.name}</p>
-                <p className="col l2 m2 center offset-l2 offset-m1 row_stick"><p className="grey-text row_stick">person</p>{project.manager}</p>
-                <p className="col l2 m2 center offset-l1 offset-m1 row_stick"><p className="grey-text row_stick">due date</p>{dueDate.toLocaleDateString("en-NZ")}</p>
-                <p className="col l1 m1 center offset-l1 offset-m1"><a href="#" className="link small">details</a></p>
-                <p className="col l1 m1 center offset-m1" key={index+"b"}>{status}</p>
-            </CollectionItem>
+        return(<Project name={project.name} due_date={project.due_date} manager={project.manager} status={project.status}/>
             );
     }
   
@@ -77,7 +65,7 @@ const Projects = ({projects}) =>{
                 </thead>
 
                 <tbody>
-                    {outputForSmall}
+                    
                 </tbody>
       </table>
       </div>

@@ -37,6 +37,7 @@ class AddProjectForm extends Component{
                 actions={this.submitButton}
                 trigger={<SideNavItem href='#' key="add-project-trigger">Add new Project</SideNavItem>}
                 >
+                <div className="modal-content">
                     <form action="#" onSubmit={this.addProject}>
                     <Row>
                         <Input placeholder="Project 678" s={6} label="Title" id="name" onChange={this.handleChange}/>
@@ -51,8 +52,9 @@ class AddProjectForm extends Component{
                         </Input>
                     </Row>
                     <br/>
-                    <button ref={(el) => this.submitButton = el}  type="submit" className="col btn s6-offset">Add</button>
+                    <button  type="submit" className="col btn s6-offset">Add</button>
                     </form>
+                    </div>
             </Modal>
         )
     }
