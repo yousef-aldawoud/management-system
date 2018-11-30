@@ -3,21 +3,8 @@ import NavBarStyle from   './NavBar.css';
 import {Button,NavItem,Dropdown,Navbar} from 'react-materialize'
 import SideNavBar from './SideNavBar';
 class NavBar extends Component {
-   state ={
-    sideNaveTrigger :false,
-    inline : {
-      'vertical-align': 'bottom',
-      'font-size': '18px !important'
-   }
-  }
-  openSideNavBar(e){
-    e.preventDefault();
-    console.log("inine icon"+NavBarStyle.inline_icon);
-    this.setState({sideNaveTrigger:!this.state.sideNaveTrigger});
-  }
+  
   render() {
-    
-    console.log("inine icon "+NavBarStyle);
     return (
       <div>
         

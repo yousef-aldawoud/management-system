@@ -18,6 +18,12 @@ class SideNavBar extends Component {
                 preventScrolling:false
             }}
         >
+        <div className="hide-on-large-only" >
+            <SideNavItem >Home</SideNavItem>
+            <SideNavItem >Settings</SideNavItem>
+            <SideNavItem >Log-out</SideNavItem>
+            <SideNavItem divider />
+        </div>
         <SideNavItem href='#!icon' icon='cloud'>First Link With Icon</SideNavItem>
         <SideNavItem href='#!second'>Second Link</SideNavItem>
         <SideNavItem divider />
