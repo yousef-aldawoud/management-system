@@ -6,3 +6,10 @@
 @media (max-width:500px){
     .modal{  height: 90% !important ; }
 } 
+center-icon{
+    margin-top: 10px;
+    background: #f0f;
+    color: #f0f;
+    vertical-align: middle !important;     
+}
+pS{ display: inline }

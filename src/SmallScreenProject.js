@@ -23,22 +23,17 @@ const Project = ({name,manager,due_date,status,index}) =>{
         return status
     }
     
-        var dueDate = new Date(due_date);
+        var dueDate = new Date(dueDate);
        
             
     return (
-
+            <tr key={index}>
+                <td>{name}</td>
+                <td>{manager}</td>
+                <td>{getStatus(due_date,status,"")}</td>
+                <td><a className="link" href="#">details</a></td>
+              </tr>)
   
-  <div>
-            
-          <CollectionItem className="row row_stick hide-on-small-only white" key={index}>
-                <p className="col l2 m2 center row_stick"><p className="grey-text row_stick">Project title</p>{name}</p>
-                <p className="col l2 m1 center offset-l2 offset-m1 row_stick"><p className="grey-text row_stick">person</p>{manager}</p>
-                <p className="col l2 m2 center offset-l1 offset-m1 row_stick"><p className="grey-text row_stick">due date</p>{dueDate.toLocaleDateString("en-NZ")}</p>
-                <p className="col l1 m1 center offset-m1"><a href="#" className="link small">details</a></p>
-                <p className="col l1 m1 center offset-l1 offset-m2" key={index+"b"}>{ getStatus(due_date,status,"")}</p>
-            </CollectionItem>
-  </div>)
        
     
   

@@ -5,7 +5,8 @@ import {Button,NavItem,Dropdown,Navbar,Collection,CollectionItem,Modal, Input,Ro
 import SideNavBar from './SideNavBar';
 import AddProjectForm from './AddProjectForm';
 import Project from './Project';
-const Projects = ({projects}) =>{
+import SmallScreenProject from './SmallScreenProject';
+const Projects = ({projects,sortProjects}) =>{
    
     const getStatus = (due_date,project_status,otherClass)=>{
         var dueDate = new Date(due_date);
@@ -24,11 +25,17 @@ const Projects = ({projects}) =>{
         return status
     }
     const getProjectsOnSmallScreen = (project,index)=>{
-        var status = getStatus(project.due_date,project.status,"");
-        var dueDate = new Date(project.dueDate);
-        return(<Project small={true} name={project.name} due_date={project.due_date} manager={project.manager} status={project.status} small={false}/>
+        return(<SmallScreenProject name={project.name} due_date={project.due_date} manager={project.manager} status={project.status} small={false}/>
             );
        
+    }
+    const sortByNameProjects = (e)=>{
+        e.preventDefault();
+        sortProjects("name");
+    }
+    const sortByDateProjects = (e)=>{
+        e.preventDefault();
+        sortProjects("date");
     }
     const getProjects= (project,index)=>{
         var status = getStatus(project.due_date,project.status);
@@ -43,10 +50,17 @@ const Projects = ({projects}) =>{
 
       <div className="container">
           <div className="row">
-          <h4 className="grey-text text-darken-2 offset-l1" >Dashboard</h4>
+          <h4 className="grey-text text-darken-2 offset-l1 " >Dashboard</h4>
+        
+
           
           </div>
-          <AddProjectForm />
+          <div className="row container">
+          <b><a href="#" className="grey-text col m5" id={"name"} onClick={sortByNameProjects}><span className="material-icons " >insert_drive_file</span><span className="hide-on-small-only"> By Project name</span> <span className="hide-on-med-and-up"> By name</span></a></b>
+          
+          <b><a href="#" className="grey-text col m5" id={"date"} onClick={sortByDateProjects}><span className="material-icons center-icon">date_range</span> <span className="hide-on-small-only"> By Project date</span> <span className="hide-on-med-and-up"> By date</span></a></b>
+          
+          </div>
           <Collection header="Projects" className ="hide-on-small-only">
 
           {output}
@@ -65,7 +79,7 @@ const Projects = ({projects}) =>{
                 </thead>
 
                 <tbody>
-                    
+                    {outputForSmall}
                 </tbody>
       </table>
       </div>

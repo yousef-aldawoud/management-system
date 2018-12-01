@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import NavBarStyle from   './NavBar.css';
 import $ from 'jquery'; 
 import   './projects.css';
 import {SideNavItem,Modal, Input,Row} from 'react-materialize'
-import SideNavBar from './SideNavBar';
 class AddProjectForm extends Component{
     
-    project = {
+    state = {
         name:null,
         manager:null,
         due_date:null,
@@ -15,33 +13,27 @@ class AddProjectForm extends Component{
     }
     constructor(props){
         super(props);    
-        this.myRef = React.createRef();
     
     }
     handleChange = (e)=>{
-    console.log(e.target.value);
-    this.project[e.target.id]=e.target.value
-    
-    console.log(this.project)
-
+        this.setState({[e.target.id]:e.target.value});
     }
     addProject = (e) =>{
         e.preventDefault();
-        this.props.addProject(this.project);
+        this.props.addProject(this.state);
         $('.modal-close').trigger('click');
     }
     render(){
         return(
             <Modal  id="modal" header='Add project' 
-             ref={(el) => this.modal = el}
                 actions={this.submitButton}
-                trigger={<SideNavItem href='#' key="add-project-trigger">Add new Project</SideNavItem>}
+                trigger={<SideNavItem href='#' key="add-project-trigger" icon="add"><p>Add new Project</p></SideNavItem>}
                 >
                 <div className="modal-content">
                     <form action="#" onSubmit={this.addProject}>
                     <Row>
                         <Input placeholder="Project 678" s={6} label="Title" id="name" onChange={this.handleChange}/>
-                        <Input name='on' placeholder="Pick a date" type='text' s={6} id="due_date" onChange={this.handleChange}/>
+                        <Input name='on' placeholder="Pick a date" type='date' s={6} id="due_date" onChange={this.handleChange}/>
                     </Row>
                     <br/>
                     <Row>    

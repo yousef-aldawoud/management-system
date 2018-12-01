@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import {Button,SideNav,SideNavItem} from 'react-materialize'
+import {SideNav,SideNavItem} from 'react-materialize'
 import AddProjectForm from './AddProjectForm';
 class SideNavBar extends Component {
     props = {trigger:null};
@@ -25,7 +25,6 @@ class SideNavBar extends Component {
             <SideNavItem >Log-out</SideNavItem>
             <SideNavItem divider />
         </div>
-        <SideNavItem href='#!icon' icon='cloud'>First Link With Icon</SideNavItem>
         <AddProjectForm addProject={this.props.addProject}/>
         <SideNavItem divider />
 
