@@ -8,7 +8,7 @@ class AddProjectForm extends Component{
         name:null,
         manager:null,
         due_date:null,
-        status:null
+        status:"unfinished"
 
     }
     constructor(props){
@@ -17,9 +17,11 @@ class AddProjectForm extends Component{
     }
     handleChange = (e)=>{
         this.setState({[e.target.id]:e.target.value});
+        
+        console.log(this.state)
     }
     addProject = (e) =>{
-        e.preventDefault();
+        e.preventDefault();;
         this.props.addProject(this.state);
         $('.modal-close').trigger('click');
     }

@@ -9,11 +9,13 @@ class App extends Component {
     {name:"Zero Xl kk",manager:"Jhon",due_date:"10/7/2018",status:"finished"},
     {name:"Devolp a website",manager:"Macenize hohoho",due_date:"1/1/2018",status:"unfinished"},
     {name:"Handle requests",manager:"Jesus Christ",due_date:"12/12/2018",status:"unfinished"},
-    {name:"Handle requests",manager:"Jesus Christ",due_date:"12/12/2018",status:"unfinished"},
+    {name:"Handle requests",manager:"Jesus Christ",due_date:"12/12/2018",status:"unfinished"}
 
 ]
  }
- 
+
+
+
 
  addProject = (obj) =>{
   const newProject =[...this.state.projects,obj];
@@ -54,7 +56,7 @@ class App extends Component {
   return (
       <div >
         <NavBar addProject={this.addProject}/>
-        <Projects projects={this.state.projects} sortProjects={this.sortProjects}/>
+        <Projects projects = {this.state.projects} sortProjects={this.sortProjects}/>
       </div>
     );
   }
