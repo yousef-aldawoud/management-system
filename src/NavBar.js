@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavBarStyle from   './NavBar.css';
 import {NavItem,Dropdown} from 'react-materialize'
 import SideNavBar from './SideNavBar';
+import {NavLink} from 'react-router-dom';
 class NavBar extends Component {
   
   render() {
@@ -20,7 +21,7 @@ class NavBar extends Component {
 
       <ul id="nav-mobile" className="right hide-on-med-and-down col l4">
             
-        <li><a>Components</a></li>
+        <li><NavLink to="/dashboard">Dashborad</NavLink></li>
          <li><Dropdown trigger={
            
                 <a herf="#" className="btn transparent z-depth-0">email ⯆</a>

@@ -36,9 +36,9 @@ const Projects = ({projects,sortProjects}) =>{
           
           </div>
           <div className="row container">
-          <b><a className="grey-text col m5" id={"name"} onClick={sortByNameProjects}><span className="material-icons " >insert_drive_file</span><span className="hide-on-small-only"> By Project name</span> <span className="hide-on-med-and-up"> By name</span></a></b>
+          <b><a href="#" className="grey-text col m5" id={"name"} onClick={sortByNameProjects}><span className="material-icons " >insert_drive_file</span><span className="hide-on-small-only"> By Project name</span> <span className="hide-on-med-and-up"> By name</span></a></b>
           
-          <b><a className="grey-text col m5" id={"date"} onClick={sortByDateProjects}><span className="material-icons center-icon">date_range</span> <span className="hide-on-small-only"> By Project date</span> <span className="hide-on-med-and-up"> By date</span></a></b>
+          <b><a href="#" className="grey-text col m5" id={"date"} onClick={sortByDateProjects}><span className="material-icons center-icon">date_range</span> <span className="hide-on-small-only"> By Project date</span> <span className="hide-on-med-and-up"> By date</span></a></b>
           
           </div>
           <Collection header="Projects" className ="hide-on-small-only">

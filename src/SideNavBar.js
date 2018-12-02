@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-
 import {SideNav,SideNavItem} from 'react-materialize'
 import AddProjectForm from './AddProjectForm';
+import {NavLink} from 'react-router-dom';
 class SideNavBar extends Component {
     props = {trigger:null};
     
@@ -29,7 +29,8 @@ class SideNavBar extends Component {
         <SideNavItem divider />
 
         <SideNavItem subheader>Subheader</SideNavItem>
-        <SideNavItem waves href='#!third'>Third Link With Waves</SideNavItem>
+        
+        <SideNavItem waves><NavLink to="/contact-us">Contact-us</NavLink></SideNavItem>
         </SideNav>
       
     );

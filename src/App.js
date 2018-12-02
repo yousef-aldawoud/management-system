@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar';
+import {BrowserRouter , Route} from 'react-router-dom';
 import Projects from './Projects';
+import ContactUs from './ContactUs';
+
 class App extends Component {
  
   state = {
@@ -19,10 +22,10 @@ class App extends Component {
 
  addProject = (obj) =>{
   const newProject =[...this.state.projects,obj];
-  console.log(newProject);
   this.setState({projects:newProject});
   window.Materialize.toast('Added new Project!', 4000);
 }
+
   sortProjects = (method) =>{
     var newProjects = this.state.projects;
     if(method==="name"){
@@ -45,15 +48,20 @@ class App extends Component {
     return 1;
   return 0;
   }
+
   compareDateMethod = (a,b) =>{
     return new Date(a.due_date).getTime() - new Date(b.due_date).getTime();
   }
+  
   render() {
   return (
-      <div >
-        <NavBar addProject={this.addProject}/>
-        <Projects projects = {this.state.projects} sortProjects={this.sortProjects}/>
-      </div>
+      <BrowserRouter>
+        <div>
+          <NavBar addProject={this.addProject}/>
+          <Route exact path="/dashboard" component={()=> <Projects projects = {this.state.projects} sortProjects={this.sortProjects}/>} />
+          <Route exact path="/contact-us" component={ContactUs} />
+        </div>
+      </BrowserRouter>
     );
   }
 }
