@@ -1,29 +1,11 @@
-import React, { Component } from 'react';
-import NavBarStyle from   './NavBar.css';
+import React from 'react';
 import   './projects.css';
-import {Button,NavItem,Dropdown,Navbar,Collection,CollectionItem,Modal, Input,Row} from 'react-materialize'
-import SideNavBar from './SideNavBar';
-import AddProjectForm from './AddProjectForm';
+import {Collection} from 'react-materialize'
 import Project from './Project';
 import SmallScreenProject from './SmallScreenProject';
 const Projects = ({projects,sortProjects}) =>{
    
-    const getStatus = (due_date,project_status,otherClass)=>{
-        var dueDate = new Date(due_date);
-        var currentDate = new Date();
-        if(project_status=="finished"){
-            const classes = "badge blue white-text "+otherClass;
-            var status =  (<span className={classes}>finished</span>);
-        }
-        else if(dueDate<currentDate && project_status=="unfinished"){
-            const classes ="badge red white-text "+ otherClass;
-            var status =  (<span className={classes}>overdue</span>);
-        }else{
-            const classes = "badge green white-text status"+otherClass;
-            var status =  (<span className={classes}>ongoing</span>);
-        }
-        return status
-    }
+    
     const getProjectsOnSmallScreen = (project,index)=>{
         return(<SmallScreenProject name={project.name} due_date={project.due_date} manager={project.manager} status={project.status} small={false}/>
             );
@@ -38,8 +20,6 @@ const Projects = ({projects,sortProjects}) =>{
         sortProjects("date");
     }
     const getProjects= (project,index)=>{
-        var status = getStatus(project.due_date,project.status);
-        var dueDate = new Date(project.dueDate);
         return(<Project name={project.name} due_date={project.due_date} manager={project.manager} status={project.status}/>
             );
     }
@@ -56,9 +36,9 @@ const Projects = ({projects,sortProjects}) =>{
           
           </div>
           <div className="row container">
-          <b><a href="#" className="grey-text col m5" id={"name"} onClick={sortByNameProjects}><span className="material-icons " >insert_drive_file</span><span className="hide-on-small-only"> By Project name</span> <span className="hide-on-med-and-up"> By name</span></a></b>
+          <b><a className="grey-text col m5" id={"name"} onClick={sortByNameProjects}><span className="material-icons " >insert_drive_file</span><span className="hide-on-small-only"> By Project name</span> <span className="hide-on-med-and-up"> By name</span></a></b>
           
-          <b><a href="#" className="grey-text col m5" id={"date"} onClick={sortByDateProjects}><span className="material-icons center-icon">date_range</span> <span className="hide-on-small-only"> By Project date</span> <span className="hide-on-med-and-up"> By date</span></a></b>
+          <b><a className="grey-text col m5" id={"date"} onClick={sortByDateProjects}><span className="material-icons center-icon">date_range</span> <span className="hide-on-small-only"> By Project date</span> <span className="hide-on-med-and-up"> By date</span></a></b>
           
           </div>
           <Collection header="Projects" className ="hide-on-small-only">

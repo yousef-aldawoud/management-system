@@ -8,12 +8,8 @@ class AddProjectForm extends Component{
         name:null,
         manager:null,
         due_date:null,
-        status:"unfinished"
+        status:"finished"
 
-    }
-    constructor(props){
-        super(props);    
-    
     }
     handleChange = (e)=>{
         this.setState({[e.target.id]:e.target.value});

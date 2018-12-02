@@ -46,11 +46,7 @@ class App extends Component {
   return 0;
   }
   compareDateMethod = (a,b) =>{
-  if (a.due_date< b.due_date)
-    return -1;
-  if (a.due_date> b.due_date)
-    return 1;
-  return 0;
+    return new Date(a.due_date).getTime() - new Date(b.due_date).getTime();
   }
   render() {
   return (

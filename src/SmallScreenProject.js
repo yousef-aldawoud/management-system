@@ -1,37 +1,32 @@
-import React, { Component } from 'react';
-import NavBarStyle from   './NavBar.css';
+import React from 'react';
 import   './projects.css';
-import {Button,NavItem,Dropdown,Navbar,Collection,CollectionItem,Modal, Input,Row} from 'react-materialize'
-import SideNavBar from './SideNavBar';
-import AddProjectForm from './AddProjectForm';
 const Project = ({name,manager,due_date,status,index}) =>{
    
     const getStatus = (due_date,project_status,otherClass)=>{
         var dueDate = new Date(due_date);
         var currentDate = new Date();
-        if(project_status=="finished"){
+        if(project_status ==="finished"){
             const classes = "badge blue white-text "+otherClass;
-            var status =  (<span className={classes}>finished</span>);
+            status =  (<span className={classes}>finished</span>);
         }
-        else if(dueDate<currentDate && project_status=="unfinished"){
+        else if(dueDate<currentDate && project_status==="unfinished"){
             const classes ="badge red white-text "+ otherClass;
-            var status =  (<span className={classes}>overdue</span>);
+            status =  (<span className={classes}>overdue</span>);
         }else{
             const classes = "badge green white-text status"+otherClass;
-            var status =  (<span className={classes}>ongoing</span>);
+            status =  (<span className={classes}>ongoing</span>);
         }
         return status
     }
     
-        var dueDate = new Date(dueDate);
-       
+        
             
     return (
             <tr key={index}>
                 <td>{name}</td>
                 <td>{manager}</td>
                 <td>{getStatus(due_date,status,"")}</td>
-                <td><a className="link" href="#">details</a></td>
+                <td><a className="link" href={"#"+index}>details</a></td>
               </tr>)
   
        
