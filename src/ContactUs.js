@@ -15,7 +15,7 @@ class App extends Component {
                                     <div className="row">
                                         <div className="input-field col s10 offset-s1">
                                             <input id="first_name" type="text" class="validate"/>
-                                            <label for="first_name">First Name</label>
+                                            <label for="first_name">Name</label>
                                         </div>
                                     </div>
 
@@ -50,7 +50,7 @@ class App extends Component {
                     </div>
                     <div className="row">
                         <i className="small purple-text text-lighten-2 material-icons col s2 offset-s1 icon-center">phone</i>
-                        <div className="col s8 center flow-text">(011)-0111-0111</div>
+                        <a className="col s8 center flow-text" href="tel:01101110111">(011)-0111-0111</a>
                     </div>
                     <br/>
                     <div className="row">
