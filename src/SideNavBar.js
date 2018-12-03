@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {SideNav,SideNavItem} from 'react-materialize'
 import AddProjectForm from './AddProjectForm';
+import {BrowserRouter , Route} from 'react-router-dom';
 import {NavLink} from 'react-router-dom';
 class SideNavBar extends Component {
     props = {trigger:null};
@@ -20,13 +21,13 @@ class SideNavBar extends Component {
             }}
         >
         <div className="hide-on-large-only" >
-            <SideNavItem >Home</SideNavItem>
-            <SideNavItem >Settings</SideNavItem>
-            <SideNavItem >Log-out</SideNavItem>
+        <SideNavItem waves><NavLink to="/">Home</NavLink></SideNavItem>
+        <SideNavItem waves><NavLink to="/dashboard">Dashboard</NavLink></SideNavItem>
             <SideNavItem divider />
         </div>
-        <AddProjectForm addProject={this.props.addProject}/>
-        <SideNavItem divider />
+        <Route exact path="/dashboard" component={()=> <AddProjectForm addProject={this.props.addProject}/>} />
+          
+        
 
         <SideNavItem subheader>Subheader</SideNavItem>
         

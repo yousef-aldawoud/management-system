@@ -60,10 +60,10 @@ class App extends Component {
                     <hr className="center icon-center" width="80%"/>
                     <br/>
                     <div className="row">
-                        <a class="fa fa-twitter fa-2x black-text col s2 offset-s2 icon-center" href="https://twitter.com/"></a>
-                        <a class="fa fa-facebook fa-2x blue-text text-darken-1 col s2 icon-center" href="https://facebook.com/"></a>
-                        <a class="fa fa-instagram fa-2x black-text col s2 icon-center" href="https://instagram.com/"></a>
-                        <a class="fa fa-youtube fa-2x red-text col s2 icon-center" href="https://youtube.com/"></a>
+                        <a class="fa fa-twitter fa-2x black-text col s1 offset-s2 icon-center" href="https://twitter.com/"></a>
+                        <a class="fa fa-facebook fa-2x blue-text text-darken-1 col s1 icon-center offset-s1" href="https://facebook.com/"></a>
+                        <a class="fa fa-instagram fa-2x black-text col s1 icon-center offset-s1" href="https://instagram.com/"></a>
+                        <a class="fa fa-youtube fa-2x red-text col s1 icon-center offset-s1" href="https://youtube.com/"></a>
                     </div>
                 </div>
                 </div>

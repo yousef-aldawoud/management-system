@@ -22,15 +22,8 @@ class NavBar extends Component {
       <ul id="nav-mobile" className="right hide-on-med-and-down col l4">
             
         <li><NavLink to="/dashboard">Dashborad</NavLink></li>
-         <li><Dropdown trigger={
-           
-                <a herf="#" className="btn transparent z-depth-0">email ⯆</a>
-            }>
-                <NavItem>settings</NavItem>
-                <NavItem>prefrence</NavItem>
-                <NavItem divider />
-                <NavItem>log-out</NavItem>
-            </Dropdown></li>
+        <li><NavLink to="/">Home</NavLink></li>
+         
 
       </ul>
       

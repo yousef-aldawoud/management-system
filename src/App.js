@@ -4,6 +4,7 @@ import {BrowserRouter , Route} from 'react-router-dom';
 import Projects from './Projects';
 import ContactUs from './ContactUs';
 import Footer from './Footer';
+import Home from './Home';
 
 class App extends Component {
  
@@ -59,8 +60,12 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <NavBar addProject={this.addProject}/>
+          
+            <Route exact path="/" component={Home} />
           <Route exact path="/dashboard" component={()=> <Projects projects = {this.state.projects} sortProjects={this.sortProjects}/>} />
+          
           <Route exact path="/contact-us" component={ContactUs} />
+          
           <br/><br/>
           <Footer/>
         </div>
