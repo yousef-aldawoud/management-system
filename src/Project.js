@@ -2,7 +2,7 @@ import React from 'react';
 import   './projects.css';
 import {CollectionItem} from 'react-materialize'
 
-const Project = ({name,manager,due_date,status,index}) =>{
+const Project = ({name,manager,due_date,status,index,deleteProject}) =>{
    
     const getStatus = (due_date,project_status,otherClass)=>{
         var status = "";
@@ -30,11 +30,11 @@ const Project = ({name,manager,due_date,status,index}) =>{
   
   <div>
             
-          <CollectionItem className="row row_stick hide-on-small-only white" key={index}>
-                <p className="col l2 m2 center row_stick"><p className="grey-text row_stick">Project title</p>{name}</p>
+          <CollectionItem className="row row_stick hide-on-small-only white" key={index} id={index}>
+                <p className="col l2 m2 center row_stick"><p className="grey-text row_stick" id={index}>Project title</p>{name}</p>
                 <p className="col l2 m1 center offset-l2 offset-m1 row_stick"><p className="grey-text row_stick">person</p>{manager}</p>
                 <p className="col l2 m2 center offset-l1 offset-m1 row_stick"><p className="grey-text row_stick">due date</p>{dueDate.toLocaleDateString("en-NZ")}</p>
-                <p className="col l1 m1 center offset-m1"><a  className="link small">details</a></p>
+                <p className="col l1 m1 center offset-m1"><a  className="link small" onClick={()=>deleteProject(index)}>delete</a></p>
                 <p className="col l1 m1 center offset-l1 offset-m2" key={index+"b"}>{ getStatus(due_date,status,"")}</p>
             </CollectionItem>
   </div>)

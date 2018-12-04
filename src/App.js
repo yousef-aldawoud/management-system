@@ -55,6 +55,13 @@ class App extends Component {
     return new Date(a.due_date).getTime() - new Date(b.due_date).getTime();
   }
   
+  deletePorject = (index) => {
+    var projects=this.state.projects;
+    projects.splice(index, 1);
+    window.Materialize.toast('Project deleted !', 4000)
+    this.setState({projects:projects});
+  }
+
   render() {
   return (
       <BrowserRouter>
@@ -62,7 +69,7 @@ class App extends Component {
           <NavBar addProject={this.addProject}/>
           
             <Route exact path="/" component={Home} />
-          <Route exact path="/dashboard" component={()=> <Projects projects = {this.state.projects} sortProjects={this.sortProjects}/>} />
+          <Route exact path="/dashboard" component={()=> <Projects projects = {this.state.projects} sortProjects={this.sortProjects} deleteProject={this.deletePorject}/>} />
           
           <Route exact path="/contact-us" component={ContactUs} />
           

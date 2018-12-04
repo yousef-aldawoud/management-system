@@ -3,11 +3,11 @@ import   './projects.css';
 import {Collection} from 'react-materialize'
 import Project from './Project';
 import SmallScreenProject from './SmallScreenProject';
-const Projects = ({projects,sortProjects}) =>{
+const Projects = ({projects,sortProjects,deleteProject}) =>{
    
     
     const getProjectsOnSmallScreen = (project,index)=>{
-        return(<SmallScreenProject name={project.name} due_date={project.due_date} manager={project.manager} status={project.status} small={false}/>
+        return(<SmallScreenProject name={project.name} due_date={project.due_date} index={index} deleteProject={deleteProject} manager={project.manager} status={project.status} small={false}/>
             );
        
     }
@@ -20,7 +20,8 @@ const Projects = ({projects,sortProjects}) =>{
         sortProjects("date");
     }
     const getProjects= (project,index)=>{
-        return(<Project name={project.name} due_date={project.due_date} manager={project.manager} status={project.status}/>
+        console.log("index : ",index);
+        return(<Project name={project.name} due_date={project.due_date} manager={project.manager} index={index} status={project.status} deleteProject={deleteProject}/>
             );
     }
   

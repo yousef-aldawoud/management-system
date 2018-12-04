@@ -1,6 +1,6 @@
 import React from 'react';
 import   './projects.css';
-const Project = ({name,manager,due_date,status,index}) =>{
+const Project = ({name,manager,due_date,status,index,deleteProject}) =>{
    
     const getStatus = (due_date,project_status,otherClass)=>{
         var dueDate = new Date(due_date);
@@ -26,7 +26,7 @@ const Project = ({name,manager,due_date,status,index}) =>{
                 <td>{name}</td>
                 <td>{manager}</td>
                 <td>{getStatus(due_date,status,"")}</td>
-                <td><a className="link" href={"#"+index}>details</a></td>
+                <td><a className="link" href={"#"+index} onClick={()=>deleteProject(index)}>details</a></td>
               </tr>)
   
        
