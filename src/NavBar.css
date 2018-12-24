@@ -15,3 +15,6 @@
     z-index: 10;
     display: block;
 }
+.clickable {
+    cursor: pointer;
+}

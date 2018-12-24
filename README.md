@@ -1,11 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created with react (https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## To start the app
 
 In the project directory, you can run:
+## Set-up
+### Packages
+You should have node and npm installed on your server or computer
+
+### `npm install`
+
+To install all required libraries<br>
+
+## React basics
 
 ### `npm start`
-
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
