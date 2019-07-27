@@ -13,3 +13,6 @@ center-icon{
     vertical-align: middle !important;     
 }
 pS{ display: inline }
+.pointer{
+    cursor: pointer;
+}
